@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESP32 WITH USB-C</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      background-color: #f9f9f9;
+      color: #333;
+      font-size: 16px; /* slightly bigger default text */
+    }
+    .sidebar {
+      width: 220px;
+      background: #f0f0f0;
+      padding: 20px;
+      position: fixed;
+      height: 100%;
+      overflow-y: auto;
+    }
+    .sidebar h2 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      color: #222;
+    }
+    .sidebar a {
+      display: block;
+      color: #444;
+      padding: 8px 0;
+      text-decoration: none;
+      font-size: 15px;
+    }
+    .sidebar a:hover {
+      color: #000;
+      font-weight: bold;
+    }
+    .content {
+      margin-left: 240px;
+      padding: 20px 40px;
+      flex: 1;
+    }
+    .content h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 26px;
+    }
+    .content img {
+      display: block;
+      margin: 10px auto;
+      max-width: 700px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .main-image {
+      max-width: 900px;
+    }
+    .content h2 {
+      margin-top: 40px;
+      font-size: 22px;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
+    }
+    .content p {
+      max-width: 850px;
+      line-height: 1.7;
+      margin-right: auto;
+      margin-left: auto;
+      font-size: 16px;
+    }
+    #introduction p {
+      text-align: justify; /* justify only introduction paragraphs */
+    }
+    .file-link {
+      margin: 10px 0;
+      font-size: 15px;
+    }
+    .file-link a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    .file-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Contents</h2>
+    <a href="#introduction">Introduction</a>
+    <a href="#schematic">Schematic</a>
+    <a href="#topview">Top View</a>
+    <a href="#bottomview">Bottom View</a>
+    <a href="#layers">Layers</a>
+    <a href="#3dviews">3D Views</a>
+    <a href="#bom">BOM</a>
+  </div>
+
+  <div class="content">
+    <h1>ESP32 WITH USB-C</h1>
+    <img src="main.png" alt="Main 3D View" class="main-image">
+
+    <h2 id="introduction">Introduction</h2>
+    <p>
+      This project was my first full journey into professional PCB design, where I created a custom ESP32 
+      development board in Altium Designer from the ground up. I approached it as both a learning challenge 
+      and a way to gain real-world PCB design skills.
+    </p>
+    <p>
+      Since I had no formal training in Altium, I taught myself the tool by working through documentation, 
+      online tutorials, and a lot of trial and error. Early on, I faced challenges with setting up libraries, 
+      managing footprints, and configuring design rules. For example, I initially struggled with power trace 
+      widths, polygon pours, and resolving design rule check (DRC) errors. Over time, I learned how to properly 
+      manage schematic libraries, assign footprints, and use Altium’s rule system to catch errors before moving 
+      into layout.
+    </p>
+    <p>
+      I started by building the schematic, wiring the ESP32 microcontroller with USB-C power input, a voltage 
+      regulator, and connectors for expansion. After finishing the schematic, I moved on to creating footprints 
+      for the components. Some parts didn’t have ready-made models, so I built the footprints myself and attached 
+      3D step models to certain components to visualize the final assembly more clearly. This gave me confidence 
+      that everything would line up correctly on the PCB.
+    </p>
+    <p>
+      For the PCB layout, I designed the board as a four-layer stack-up, with dedicated power and ground planes. 
+      This made routing easier, reduced noise, and helped keep the design compact. I experimented with different 
+      component placements to shorten traces and improve signal flow. I also used polygon pours, via stitching, 
+      and Altium’s 3D view to refine both the electrical and mechanical aspects of the design.
+    </p>
+    <p>
+      By the end of the project, I had produced a complete set of outputs for manufacturing: Gerber files, 
+      a bill of materials (BOM), schematic and PCB documentation, and a 3D model of the board. More importantly, 
+      I came away with a practical understanding of the entire PCB design cycle, from starting with an empty schematic 
+      to producing files that could be sent to fabrication.
+    </p>
+
+    <h2 id="schematic">Schematic</h2>
+    <div class="file-link">
+      📄 <a href="Schematic.pdf" target="_blank">View Full Schematic (PDF)</a>
+    </div>
+
+    <h2 id="topview">Top View</h2>
+    <p>Top view of the PCB design</p>
+    <img src="TopOverlay.png" alt="Top Overlay">
+    <img src="TOPPCB3D.png" alt="Top 3D PCB">
+
+    <h2 id="bottomview">Bottom View</h2>
+    <p>Bottom view of the PCB design</p>
+    <img src="BottomOverlay.png" alt="Bottom Overlay">
+    <img src="BottomPCB3D.png" alt="Bottom 3D PCB">
+
+    <h2 id="layers">Layers</h2>
+    <p>Individual PCB layers for the ESP32 design</p>
+    <img src="L1.png" alt="Layer 1">
+    <img src="L2.png" alt="Layer 2">
+    <img src="L3.png" alt="Layer 3">
+    <img src="L4.png" alt="Layer 4">
+
+    <h2 id="3dviews">3D Views</h2>
+    <p>3D views of the ESP32 custom board</p>
+    <img src="SidePCB3D.png" alt="Side 3D PCB">
+    <img src="Sideview3D.png" alt="Side View 3D">
+
+    <h2 id="bom">BOM</h2>
+    <div class="file-link">
+      📊 <a href="BOM-ESP32.xlsx" target="_blank">Download Bill of Materials (Excel)</a>
+    </div>
+  </div>
+</body>
+</html>
